@@ -1,0 +1,147 @@
+@import "config";
+
+body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: $violet;
+    background-image: url("../images/bg-mobile.svg");
+    background-repeat: no-repeat;
+
+    @include mq(376px) {
+        background-image: url("../images/bg-desktop.svg");
+        background-repeat: no-repeat;
+        justify-content: center;
+    }
+
+    .main {
+        padding: 2rem;
+
+        @include mq(1024px) {
+            display: flex;
+            padding: 4rem 4rem 0 4rem;
+        }
+
+        &-logo-illust {
+            display: flex;
+            flex-direction: column;
+
+            .logo {
+                width: 36vw;
+                max-width: 200px;
+                margin-bottom: 2.5rem;
+            }
+            .illust {
+                width: 80vw;
+                max-width: 720px;
+                margin-bottom: 2.5rem;
+            }
+        }
+        &-content {
+            text-align: center;
+
+            @include mq(1024px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+                padding: 2rem;
+            }
+
+            .title {
+                color: white;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+
+                @include mq(1024px) {
+                    font-size: 2.5rem;
+                }
+            }
+            .desc {
+                color: white;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 400;
+                margin-bottom: 1.5rem;
+
+                @include mq(1024px) {
+                    font-size: 1.15rem;
+                }
+            }
+            .btn {
+                border: none;
+                background-color: white;
+                padding: 0.6rem 4.5rem;
+                color: $violet;
+
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                border-radius: 2rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+                margin-bottom: 2rem;
+                cursor: pointer;
+
+                @include mq(1024px) {
+                    font-size: 1.15rem;
+                }
+            }
+            .btn:hover {
+                background-color: $magenta;
+                color: white;
+            }
+            .btn:active {
+                transform: translateY(3px);
+            }
+        }
+    }
+    .social-buttons {
+        margin-bottom: 3rem;
+        padding: 1rem;
+
+        @include mq(1024px) {
+            margin-bottom: 0;
+            margin-right: 5rem;
+            align-self: flex-end;
+        }
+
+        .social-btn {
+            border: 1px solid white;
+            background-color: $violet;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50%;
+            margin: 8px;
+            content: "";
+            position: relative;
+
+            .fa-facebook-f {
+                position: absolute;
+                top: 7.5px;
+                left: 10.5px;
+            }
+            .fa-twitter {
+                position: absolute;
+                top: 7.5px;
+                left: 8px;
+            }
+            .fa-instagram {
+                position: absolute;
+                top: 7.5px;
+                left: 9px;
+            }
+        }
+        .social-btn:hover {
+            border: 1px solid $magenta;
+            color: $magenta;
+        }
+    }
+}
